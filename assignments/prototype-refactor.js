@@ -10,10 +10,10 @@ Prototype Refactor
 
 
 class GameObject {
-    constructor(options) {
-    this.createdAt = options.createdAt;
-    this.name = options.name;
-    this.dimensions = options.dimensions;
+    constructor(attributes) {
+    this.createdAt = attributes.createdAt;
+    this.name = attributes.name;
+    this.dimensions = attributes.dimensions;
     }
     
     destroy() {
@@ -22,9 +22,9 @@ class GameObject {
 }
 
 class CharacterStats extends GameObject {
-    constructor(characterStatsOptions) {
-        super(characterStatsOptions);
-        this.healthPoints = characterStatsOptions.healthPoints;
+    constructor(characterStatsAttributes) {
+        super(characterStatsAttributes);
+        this.healthPoints = characterStatsAttributes.healthPoints;
     }
 
 takeDamage() {
@@ -34,11 +34,11 @@ takeDamage() {
 
 
 class Humanoid extends CharacterStats {
-    constructor(humanoidOptions) {
-    super(humanoidOptions);
-    this.team = humanoidOptions.team;
-    this.weapons = humanoidOptions.weapons;
-    this.language = humanoidOptions.language;
+    constructor(humanoidAttributes) {
+    super(humanoidAttributes);
+    this.team = humanoidAttributes.team;
+    this.weapons = humanoidAttributes.weapons;
+    this.language = humanoidAttributes.language;
     }
     
 greet() {

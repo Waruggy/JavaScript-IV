@@ -20,7 +20,7 @@ class Insructor extends Person {
     }
     
     demo(subject) {
-        return `Today we are leaning about ${subject}`;
+        return `Today we are learning about ${subject}`;
     }
     
     grade(student, subject) {
@@ -37,7 +37,7 @@ class Student extends Person {
     }
     
     listsSubjects() {
-        this.favSubjects.map(item => console.log(item));
+        return `${this.favSubjects}`;
     }
     
     PRAssignment(subject) {
@@ -56,7 +56,7 @@ class ProjectManager extends Insructor {
     }
     
     standUp(channel) {
-        return `${this.name} announces to ${channel}, @channel standy times!`;
+        return `${this.name} announces to ${channel}, @${channel} standy times!`;
     }
     
     debugsCode(student, subject) {
@@ -66,8 +66,8 @@ class ProjectManager extends Insructor {
 
 const jack = new Insructor ({
     name: "Jack",
-    location: "New York",
     age: 32,
+    location: "New York",
     favLanguage: "HTML",
     specialty: "Front-end",
     catchPhrase: `Oy`
@@ -75,45 +75,51 @@ const jack = new Insructor ({
 
 const rod = new Insructor ({
     name: "Rod",
-    location: "San Francisco",
     age: 36,
+    location: "San Francisco",
     favLanguage: "CSS",
     specialty: "Back-end",
-    catchPhrase: `Hey`
+    catchPhrase: `Hey, get back to work`
 });
 
 const jake = new Student ({
     name: "Jake",
-    location: "Boise",
     age: 24,
-    favSubjects: ["JavaScript", "C++"],
+    location: "Boise",
+    previousBackground: "Cashier",
+    className: "A3",
+    favSubjects: ["JavaScript", "C++"]
 });
 
 const mindy = new Student ({
     name: "Mindy",
-    location: "Dallas",
     age: 22,
-    favSubjects: ["HTML", "Python"],
+    location: "Dallas",
+    previousBackground: "Waitress",
+    className: "B1",
+    favSubjects: ["HTML", "Python"]
 });
 
 const satoshi = new ProjectManager ({
     name: "Satoshi",
-    location: "Tokyo",
     age: 38,
-    gradClassName: "NH1"
+    location: "Tokyo",
+    gradClassName: "NH1",
+    favInstrucor: "Bernard"
 });
 
 const hanako = new ProjectManager ({
-    name: "Hanako", 
-    location: "Kyoto",
+    name: "Hanako",
     age: 30,
-    gradClassName: "NH2"
+    location: "Kyoto",
+    gradClassName: "NH2",
+    favInstrucor: "Lee"
 });
 
 console.log(hanako.speak());
 console.log(mindy.listsSubjects());
 console.log(hanako.debugsCode(mindy, "CSS"));
-console.log(satoshi.standUp("NHK43"));
+console.log(satoshi.standUp("NHK43"));  
 console.log(mindy.sprintChallenge("C++"));
 console.log(jack.demo("Progress"));
 console.log(jack.grade(mindy,"JavaScript"));
